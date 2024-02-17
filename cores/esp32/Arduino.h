@@ -40,6 +40,15 @@
 #include "stdlib_noniso.h"
 //--//#include "binary.h"
 
+#include "esp_log.h"
+
+#define log_w(...) ESP_LOGW("Arduino", ##__VA_ARGS__)
+#define log_e(...) ESP_LOGE("Arduino", ##__VA_ARGS__)
+
+#include "esp_timer.h"
+
+#define millis() (esp_timer_get_time() / 1000ULL)
+
 #define PI 3.1415926535897932384626433832795
 #define HALF_PI 1.5707963267948966192313216916398
 #define TWO_PI 6.283185307179586476925286766559
@@ -174,7 +183,7 @@ extern "C" {
 
 //--//#include "WCharacter.h"
 //--//#include "WString.h"
-//--//#include "Stream.h"
+#include "Stream.h"
 //--//#include "Printable.h"
 //--//#include "Print.h"
 //--//#include "IPAddress.h"

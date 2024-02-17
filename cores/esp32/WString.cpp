@@ -24,7 +24,7 @@
 #include "Arduino.h"
 #include "WString.h"
 #include "stdlib_noniso.h"
-#include "esp32-hal-log.h"
+//--//#include "esp32-hal-log.h"
 
 /*********************************************/
 /*  Constructors                             */
