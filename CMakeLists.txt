@@ -1,4 +1,5 @@
 set(CORE_SRCS
+  cores/esp32/dummySerial.cpp
   cores/esp32/Print.cpp
   cores/esp32/stdlib_noniso.c
   cores/esp32/Stream.cpp

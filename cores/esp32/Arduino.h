@@ -48,6 +48,7 @@
 #include "esp_timer.h"
 
 #define millis() (esp_timer_get_time() / 1000ULL)
+#define micros64() (esp_timer_get_time())
 
 #define PI 3.1415926535897932384626433832795
 #define HALF_PI 1.5707963267948966192313216916398
@@ -145,6 +146,15 @@ typedef unsigned int word;
 #ifdef __cplusplus
 void setup(void);
 void loop(void);
+
+class dummySerial{
+public:
+	virtual void println(const char *);
+};
+
+extern dummySerial dSerial;
+
+#define Serial dSerial
 
 // The default is using Real Hardware random number generator  
 // But when randomSeed() is called, it turns to Psedo random
