@@ -50,6 +50,7 @@
 
 #define millis() (esp_timer_get_time() / 1000ULL)
 #define micros64() (esp_timer_get_time())
+#define micros() ((unsigned long)(esp_timer_get_time()))
 
 #define PI 3.1415926535897932384626433832795
 #define HALF_PI 1.5707963267948966192313216916398
@@ -193,10 +194,11 @@ extern "C" {
 #include <cmath>
 
 //--//#include "WCharacter.h"
-//--//#include "WString.h"
+#include "WString.h"
 #include "Stream.h"
-//--//#include "Printable.h"
-//--//#include "Print.h"
+#include "StreamString.h"
+#include "Printable.h"
+#include "Print.h"
 //--//#include "IPAddress.h"
 //--//#include "Client.h"
 //--//#include "Server.h"
